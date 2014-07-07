@@ -1,0 +1,64 @@
+[%-  
+
+authors = [
+    {
+        type => 'added', 
+        label => l('Added Author'),
+        xpath => '//*[@tag="700"]|//*[@tag="710"]|//*[@tag="711"]'
+    }
+];
+
+BLOCK build_author_links;
+    '<table>';
+    '<tr><td style="padding-right:100px;">';
+    index = 0;
+    FOR node IN ctx.marc_xml.findnodes(xpath);
+        term = '';
+        qterm = '';
+        iprop = '';
+        FOR subfield IN node.childNodes;
+            NEXT UNLESS subfield.nodeName == "subfield";
+            code = subfield.getAttribute('code');
+            NEXT UNLESS code.match('[a-z]');
+            sf_raw = subfield.textContent;
+            sf = subfield.textContent | html;
+            term = term _ ' ' _ sf;
+            qterm = qterm _ ' ' _ sf_raw;
+        END;
+        url = mkurl(ctx.opac_root _ '/results', {query => qterm, qtype => 'author'}, ['page', 'expand']);
+        author_type = label | html;
+        
+        # schema.org changes
+        IF type == 'author';
+            iprop = ' itemprop="accountablePerson"';
+        ELSIF type == 'added';
+            iprop = ' itemprop="contributor"';
+        END;
+        '<a href="' _ url _ '"' _ iprop _ '>' _ term.replace('^\s+', '') _ '</a> <br>';
+	
+	index = index + 1;
+	IF index mod 2 == 0;
+	   '</td></tr><tr><td style="padding-right:100px;">';
+	ELSE;
+	    '</td><td style="padding-left:100px;">&nbsp;&nbsp;';
+	END;
+    END;
+    '</td></tr>';
+    '</table>';
+END;
+%]
+
+<div class='rdetail_authors_contributors_div'>
+
+[%- FOREACH author IN authors;
+    NEXT UNLESS author.xpath; 
+    links = PROCESS build_author_links(
+        xpath=author.xpath, label=author.label, type=author.type
+    );
+    #IF links.match('\S') 
+    IF ctx.marc_xml.findnodes(author.xpath).size > 0		  %]
+	<span class='rdetail_related_authors'>[% links %]</span> <!-- pick final CSS name -->
+    [%- END %]
+[%- END %]
+</div>
+

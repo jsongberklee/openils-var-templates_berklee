@@ -1,0 +1,49 @@
+<!-- original template copied from subjects.tt2 by kyujung -->
+
+[% 
+    additional_note = 
+        {
+            label = l('additional_notes'),
+	    xpath => '//*[@tag="500"]|//*[@tag="502"]|//*[@tag="504"]|//*[@tag="508"]|//*[@tag="518"]|//*[@tag="520"]|//*[@tag="521"]|//*[@tag="538"]|//*[@tag="546"]|//*[@tag="586"]'
+	    # xpath = '//*[starts-with(@tag,"5")]'
+        };
+
+    BLOCK render_subject;
+        FOR node IN ctx.marc_xml.findnodes(xpath);
+            all_terms = [];
+            FOR subfield IN node.childNodes;
+                NEXT UNLESS subfield.nodeName == "subfield";
+                code = subfield.getAttribute('code');
+                NEXT UNLESS code.match('[a-z]');
+                IF code.match('[vxyz]'); " &gt; "; END;
+                # at this point, we actually have a partial term to use.
+                single_term = subfield.textContent | html;
+                all_terms.push(subfield.textContent);
+                total_term = all_terms.join(" ").replace('\s+$', '');
+            %]
+		[% single_term %]
+            [%- END;
+            IF all_terms.size; "<br/>"; END;
+        END;
+    END 
+%]
+
+[%  BLOCK render_all_subjects;
+        content = PROCESS render_subject(xpath=additional_note.xpath);
+        IF content.match('\S');
+%]
+        <table class='rdetail_subject'>
+            <tbody>
+                <tr>
+                    <td class='rdetail_subject_value' itemprop='keywords'>[% content %]</td>
+                </tr>
+            </tbody>
+        </table>
+        [%- END; %]
+[%- END %]
+
+[%-  subject_html = PROCESS render_all_subjects;
+    IF subject_html.length > 0;
+%]
+[%- subject_html %]
+[%- END %]

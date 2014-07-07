@@ -1,0 +1,52 @@
+  <!--.l-header region -->
+  <header role="banner" class="l-header">
+
+          <!--.top-bar -->
+            <div class="contain-to-grid show-for-small">
+              <nav class="top-bar" data-options="" style="">
+          <ul class="title-area">
+            <li class="name"><h1><a href="https://library.berklee.edu/" rel="home" title="Stan Getz Library Home" class="active">Stan Getz Library</a> <span style="color:#fff">|</span> <a href="https://library.berklee.edu/archives" rel="archives" title="Archives">Archives</a></h1></li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          </ul>
+          
+        <section class="top-bar-section">
+                          <ul id="main-menu" class="main-nav left"><li class="first leaf" title="main search menu"><a href="https://library.berklee.edu/" title="main search menu" class="active"><i class="fi-magnifying-glass"></i><strong class="searchmbtn">SEARCH</strong></a></li><li class="expanded has-dropdown not-click" title="main browse page"><a href="https://library.berklee.edu/node/6" title="main browse page">BROWSE</a><ul class="dropdown"><li class="first leaf"><a href="https://catalog.berklee.edu/eg/opac/home?physical_loc=2">Catalog</a></li><li class="leaf"><a href="https://library.berklee.edu/resources" target="_blank">Class Reserves</a></li><li class="leaf"><a href="https://library.berklee.edu/browse/acquisitions">Recent Acquisition</a></li><li class="leaf"><a href="https://library.berklee.edu/browse/leadsheet/songs">Leadsheet index</a></li><li class="leaf"><a href="http://catalog.berklee.edu:2048/login?url=http://mx2mu4hx6v.cs.serialssolutions.com/" target="_blank">Electronic Collections</a></li><li class="leaf"><a href="https://library.berklee.edu/av-streaming">A/V Streaming</a></li><li class="leaf"><a href="https://library.berklee.edu/browse/class-reserve">Class Reserves Internal</a></li><li class="leaf"><a href="https://library.berklee.edu/research/Main_Page" target="_blank">Research Guides</a></li><li class="last leaf"><a href="https://library.berklee.edu/browse/periodicals">Periodicals</a></li></ul></li><li class="expanded has-dropdown not-click" title="main about us page"><a href="https://library.berklee.edu/node/7" title="main about us page">ABOUT US</a><ul class="dropdown"><li class="title back js-generated"><h5><a href="#">« Back</a></h5></li><li><a class="parent-link js-generated" href="https://library.berklee.edu/node/7">ABOUT US</a></li><li class="last expanded show-for-small"><a href="https://library.berklee.edu/node/7" title="main about us page">ABOUT US</a></li><li class="first leaf"><a href="https://library.berklee.edu/about-us/library-events">Library Events</a></li><li class="leaf"><a href="https://library.berklee.edu/about-us/virtual-display">Library Display</a></li><li class="leaf"><a href="https://library.berklee.edu/about-us/blog">Library Blog</a></li><li class="leaf"><a href="https://library.berklee.edu/about-us/library-hours-static">Library Hours</a></li><li class="leaf"><a href="https://library.berklee.edu/about-us/services">Services</a></li><li class="leaf"><a href="https://library.berklee.edu/about-us/faq">FAQ</a></li><li class="leaf"><a href="http://valencia.berklee.edu/valencia-campus/facilities/#.tab_library" target="_blank">Valencia</a></li><li class="last leaf"><a href="https://library.berklee.edu/about-us/contact-us">Contact Us</a></li></ul></li><li class="last leaf hide-for-small" style="min-width: 0;"><a href="https://library.berklee.edu/archives">Archives</a></li></ul></section></nav>
+            </div>
+            <!--/.top-bar -->
+    
+    <!-- Title, slogan and menu -->
+        <section class="row  hide-for-small">
+	
+      <div id="logo-bcm"><a href="http://library.berklee.edu/" rel="home" title="Stan Getz Library Home"><img class="logo" typeof="foaf:Image" src="/berklee_assets/images/logo.png" alt="Stan Getz Library logo" title="Stan Getz Library Home"></a></div>
+
+                <h1 id="site-name">
+            <a href="http://library.berklee.edu/" title="Home" rel="home"><span>Stan Getz Library</span></a>
+          </h1>
+      
+            
+      <!--.top-bar added by jsong -->
+      <nav class="top-bar" data-options="">
+          <section class="top-bar-section"><ul id="main-menu" class="main-nav left"><li class="first leaf" title="main search menu"><a href="https://library.berklee.edu/" title="main search menu"><i class="fi-magnifying-glass"></i><strong class="searchmbtn">SEARCH</strong></a></li><li class="expanded has-dropdown not-click" title="main browse page"><a href="https://library.berklee.edu/node/6" title="main browse page">BROWSE</a><ul class="dropdown"><li class="title back js-generated"><h5><a href="#">« Back</a></h5></li><li><a class="parent-link js-generated" href="https://library.berklee.edu/node/6">BROWSE</a></li><li class="expanded show-for-small"><a href="https://library.berklee.edu/node/6" title="main browse page">BROWSE</a></li><li class="first leaf"><a href="https://catalog.berklee.edu/eg/opac/home?physical_loc=2">Catalog</a></li><li class="leaf"><a href="https://library.berklee.edu/resources" target="_blank">Class Reserves</a></li><li class="leaf"><a href="https://library.berklee.edu/browse/acquisitions">Recent Acquisition</a></li><li class="leaf"><a href="https://library.berklee.edu/browse/leadsheet/songs">Leadsheet index</a></li><li class="leaf"><a href="http://catalog.berklee.edu:2048/login?url=http://mx2mu4hx6v.cs.serialssolutions.com/" target="_blank">Electronic Collections</a></li><li class="leaf"><a href="https://library.berklee.edu/av-streaming">A/V Streaming</a></li><li class="leaf"><a href="https://library.berklee.edu/research/Main_Page" target="_blank">Research Guides</a></li><li class="last leaf"><a href="https://library.berklee.edu/browse/periodicals">Periodicals</a></li></ul></li><li class="expanded has-dropdown not-click" title="main about us page"><a href="https://library.berklee.edu/node/7" title="main about us page">ABOUT US</a><ul class="dropdown"><li class="title back js-generated"><h5><a href="#">« Back</a></h5></li><li><a class="parent-link js-generated" href="https://library.berklee.edu/node/7">ABOUT US</a></li><li class="last expanded show-for-small"><a href="https://library.berklee.edu/node/7" title="main about us page">ABOUT US</a></li><li class="first leaf"><a href="https://library.berklee.edu/about-us/library-events">Library Events</a></li><li class="leaf"><a href="https://library.berklee.edu/about-us/virtual-display">Library Display</a></li><li class="leaf"><a href="https://library.berklee.edu/about-us/blog">Library Blog</a></li><li class="leaf"><a href="https://library.berklee.edu/about-us/library-hours-static">Library Hours</a></li><li class="leaf"><a href="https://library.berklee.edu/about-us/services">Services</a></li><li class="leaf"><a href="https://library.berklee.edu/about-us/faq">FAQ</a></li><li class="leaf"><a href="http://valencia.berklee.edu/valencia-campus/facilities/#.tab_library" target="_blank">Valencia</a></li><li class="last leaf"><a href="https://library.berklee.edu/about-us/contact-us">Contact Us</a></li></ul></li><li class="last leaf hide-for-small" style="min-width: 0;"><a href="https://library.berklee.edu/archives">Archives</a></li></ul></section>
+      </nav>
+      <!--/.top-bar -->
+
+	<!-- hidden by jsong	
+              <nav id="main-menu" class="navigation" role="navigation">
+          <h2 class="element-invisible">Main menu</h2><ul id="main-menu-links" class="links inline-list clearfix"><li class="menu-381 first"><a href="/" title="main search menu">Search</a></li>
+<li class="menu-382"><a href="/browse" title="main browse page">Browse</a></li>
+<li class="menu-383 last"><a href="/about-us" title="main about us page">About Us</a></li>
+</ul>        </nav> <!-- /#main-menu --
+      
+              <nav id="secondary-menu" class="navigation" role="navigation">
+          <h2 class="element-invisible">Secondary menu</h2><ul id="secondary-menu-links" class="links clearfix"><li class="menu-1151 first last"><a href="http://library.berklee.edu/users/editor">Library Editor</a></li>
+</ul>        </nav> <!-- /#secondary-menu --
+      	-->
+    </section>
+        <!-- End title, slogan and menu -->
+
+    
+  </header>
+  <!--/.l-header -->
+
+  <!--/.l-header -->
+  <style>section.row{max-width: 100% !important;}</style>    

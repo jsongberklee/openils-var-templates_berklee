@@ -1,0 +1,50 @@
+[%-  
+
+authors = [
+    {
+        type => 'performers', 
+        label => l('Performers'),
+        xpath => '//*[@tag="511"]'
+    }
+];
+
+BLOCK build_author_links;
+    FOR node IN ctx.marc_xml.findnodes(xpath);
+        term = '';
+        qterm = '';
+        iprop = '';
+        FOR subfield IN node.childNodes;
+	    NEXT UNLESS subfield.nodeName == "subfield";
+            code = subfield.getAttribute('code');
+            NEXT UNLESS code.match('[a-z]');
+            sf_raw = subfield.textContent;
+            sf = subfield.textContent | html;
+            term = term _ ' ' _ sf;
+            qterm = qterm _ ' ' _ sf_raw;
+	
+	END;
+        url = mkurl(ctx.opac_root _ '/results', {query => qterm, qtype => 'author'}, ['page', 'expand']);
+        author_type = label | html;
+        
+        term.replace('^\s+', '');
+	
+    END;
+END;
+%]
+
+<div class='rdetail_authors_contributors_div'>
+
+[%- FOREACH author IN authors;
+    	IF author.xpath; 
+		links = PROCESS build_author_links(
+        	xpath=author.xpath, label=author.label, type=author.type
+    		);
+    		IF links.match('\S') %]
+			<span class='rdetail_related_authors'>[% links %]</span> <!-- pick final CSS name -->
+    		[%- END %]
+        [%- END; 
+     END;
+%]
+
+</div>
+

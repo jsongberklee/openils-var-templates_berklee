@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang='[% ctx.locale.replace('_', '-') %]' class='no-js'>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        [% IF ctx.refresh %]
+        <meta http-equiv="refresh" content="[% ctx.refresh %]">
+        [% ELSIF ctx.authtime AND !ctx.is_staff %]
+        <meta http-equiv="refresh" content="[% ctx.authtime %]; url=[% ctx.logout_page %]">
+        [% END %]
+        <meta name = "viewport" content = "initial-scale = 1.0">
+        <link rel="stylesheet" type="text/css" href="[% ctx.media_prefix %]/css/skin/default/opac/semiauto.css" />
+        <link rel="stylesheet" type="text/css" href="[% ctx.opac_root %]/css/style.css" />
+        
+        
+               
+        
+        <title>[% l('Catalog - [_1]', ctx.page_title) %]</title>
+        <link rel="unapi-server" type="application/xml" title="unAPI" href="/opac/extras/unapi" />
+        [% IF want_dojo %]
+        <style type="text/css">
+            @import "[% ctx.media_prefix %]/js/dojo/dijit/themes/tundra/tundra.css";
+        </style>
+        [% END %]
+        [% INCLUDE 'opac/parts/goog_analytics.tt2' %]
+        
+        
+        <link rel="shortcut icon" href="/favicon.ico" />
+[% IF !ctx.is_staff %]
+
+        <style>	
+			@import url("/berklee_assets/fonts/foundation-icons/foundation-icons.css");
+			@import url("/berklee_assets/css/foundation.min.css");
+			@import url("/berklee_assets/css/custom.css");
+			@import url("/berklee_assets/css/style-bcmlib.css");
+			@import url("/berklee_assets/css/bcmlib_style_opac.css");
+			@import url("https://library.berklee.edu/_eg-include/eg-include.css");
+		</style>  
+
+
+		<script src="/berklee_assets/js/jquery.min.js?v=1.7.1"></script>
+		<script src="/berklee_assets/js/jquery.once.js?v=1.2"></script>
+		<script src="/berklee_assets/js/drupal.js"></script>
+		<script src="/berklee_assets/js/custom.modernizr.js"></script>
+		<script src="/berklee_assets/js/foundation.min.js"></script>
+[% END %]        
+    </head>
+    <body[% IF want_dojo; ' class="tundra"'; END %]>
+        [% content %] 
+        [% INCLUDE 'opac/parts/footer.tt2' %]
+        [% INCLUDE 'opac/parts/js.tt2' %]
+        [%- IF ENV.OILS_CHILIFRESH_ACCOUNT %]
+            [%- INCLUDE 'opac/parts/chilifresh.tt2' %]
+        [%- END %]
+
+
+[% IF !ctx.is_staff %]        
+		<script>
+			(function ($, Drupal, window, document, undefined) {
+			  $(document).foundation();
+			})(jQuery, Drupal, this, this.document);
+		</script>
+[% END %] 
+    
+    </body>
+</html>

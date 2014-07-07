@@ -1,0 +1,48 @@
+[%-  
+
+authors = [
+    {
+        type => 'song_title', 
+        label => l('Song Title'),
+        xpath => '//*[@tag="945"]'
+    }
+];
+
+BLOCK build_author_links;
+    FOR node IN ctx.marc_xml.findnodes(xpath);
+        term = '';
+        qterm = '';
+        iprop = '';
+        FOR subfield IN node.childNodes;
+            NEXT UNLESS subfield.nodeName == "subfield";
+            code = subfield.getAttribute('code');
+            NEXT UNLESS code.match('[a-z]');
+            sf_raw = subfield.textContent;
+            sf = subfield.textContent | html;
+            term = term _ ' ' _ sf;
+            qterm = qterm _ ' ' _ sf_raw;
+        END;
+        url = mkurl(ctx.opac_root _ '/results', {query => qterm, qtype => 'keyword'}, ['page', 'expand']);
+        author_type = label | html;
+        
+        '<a href="' _ url _ '"' _ iprop _ '>' _ term.replace('^\s+', '') _ '</a> <br>';
+    END;
+END;
+%]
+
+<div class='rdetail_authors_contributors_div'>
+
+[%- FOREACH author IN authors;
+    NEXT UNLESS author.xpath; 
+    links = PROCESS build_author_links(
+        xpath=author.xpath, label=author.label, type=author.type
+    );
+
+    IF links.match('\S') %]
+
+  	<span class='rdetail_related_authors'>[% links %]</span> <!-- pick final CSS name -->
+
+    [%- END %]
+[%- END %]
+</div>
+
